@@ -23,9 +23,14 @@ export default function AddShow({ setShows }) {
   const handleAddShow = (e) => {
     e.preventDefault();
 
+    const token = localStorage.getItem("token")  // get our JWT from local storage
+
     fetch("https://tv-shows-api-c10.web.app/shows", {
       method: "POST",
-      headers: { "Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json",
+      "Authorization": token, 
+    },
+      
       body: JSON.stringify( {title, poster, seasons} )
     })
     .then(resp => resp.json())
