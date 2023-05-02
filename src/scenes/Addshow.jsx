@@ -7,6 +7,19 @@ export default function AddShow({ setShows }) {
   const [seasons, setSeasons] = useState('');
   const navigate = useNavigate();
 
+  // const handleDelete = (showId) => {
+  //   fetch(`https://tv-shows-api-xx.web.app/shows/${showId}`, {
+  //     method:"DELETE",
+  //     headers:{"Content-Type": "application/json"}
+  //   })
+  //   .then(resp => resp.json())
+  //   .then(setShows)
+  //   .catch(alert)
+  // }
+
+  // <button onClick={()=> handleDelete(showId)}>Delete Show</button>
+
+
   const handleAddShow = (e) => {
     e.preventDefault();
 
